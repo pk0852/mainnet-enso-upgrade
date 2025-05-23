@@ -15,7 +15,8 @@ sudo cp "$current_path/libwasmvm.x86_64.so" /usr/lib
 # Get OS and version
 OS=$(awk -F= '/^NAME=/{print $2}' /etc/os-release | tr -d '"' | awk '{print $1}')
 VERSION=$(awk -F= '/^VERSION_ID=/{print $2}' /etc/os-release | tr -d '"' | awk '{print $1}')
-
+wget https://github.com/ShidoGlobal/testnet-enso-upgrade/releases/download/ubuntu${VERSION}/shidod
+chmod u+x shidod
 # Define the binary
 BINARY="shidod"
 
